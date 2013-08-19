@@ -2,6 +2,7 @@ package no.osthus.rest;
 
 import no.osthus.services.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -11,12 +12,15 @@ import javax.ws.rs.core.MediaType;
 /**
  * Root resource (exposed at "myresource" path)
  */
+@Component
 @Path("myresource")
 public class MyResource {
 
-    @Autowired MyService service;
+    private final MyService service;
 
-
+    public MyResource(MyService service) {
+        this.service = service;
+    }
 
     /**
      * Method handling HTTP GET requests. The returned object will be sent

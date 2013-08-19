@@ -9,6 +9,10 @@
         >
 
 
-    <bean class="no.osthus.services.MyService" />
+    <bean id="myService" class="no.osthus.services.MyService" />
+    <bean class="no.osthus.rest.MyResource">
+        <constructor-arg ref="myService" />
+    </bean>
+
 
 </beans>
