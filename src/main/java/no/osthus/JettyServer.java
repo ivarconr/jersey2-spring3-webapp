@@ -15,7 +15,7 @@ public class JettyServer {
 
         WebAppContext context = new WebAppContext();
         context.setDescriptor(context + "/WEB-INF/web.xml");
-        context.setResourceBase("../file-service/src/main/webapp");
+        context.setResourceBase("../jersey2-spring3-webapp/src/main/webapp");
         context.setContextPath("/");
         context.setParentLoaderPriority(true);
 

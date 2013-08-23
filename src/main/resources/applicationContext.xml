@@ -10,6 +10,11 @@
 
 
     <bean id="myService" class="no.osthus.services.MyService" />
+    <bean id="randomService" class="no.osthus.services.RandomService" />
+    <!--<bean class="no.osthus.rest.GlobalExceptionMapper">-->
+        <!--<constructor-arg ref="randomService" />-->
+    <!--</bean>-->
+
     <bean class="no.osthus.rest.MyResource">
         <constructor-arg ref="myService" />
     </bean>

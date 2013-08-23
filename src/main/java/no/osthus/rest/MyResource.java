@@ -33,4 +33,11 @@ public class MyResource {
     public String getIt() {
         return "Got it!" + service.toString();
     }
+
+    @Path("error")
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getError() {
+        throw new IllegalArgumentException("Error!");
+    }
 }
